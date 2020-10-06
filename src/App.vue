@@ -1,10 +1,40 @@
 <template>
+<div class="wr">
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <h1>This is a pan</h1>
+    <h2>Hey</h2>
+    <Navigate />
   </div>
+  <SomeList v-bind:dataArr='dataArr'/>
+  
   <router-view/>
+</div>
+
 </template>
+
+<script>
+import SomeList from '@/components/SomeList'
+import Navigate from '@/components/Navigate'
+export default {
+  name: 'app',
+  components: {
+    SomeList,
+    Navigate
+  },
+  data () {
+    return {
+      dataArr: [
+        {id:1, data: "Field1"},
+        {id:2, data: "Field2"},
+        {id:3, data: "Field3"},
+        {id:4, data: "Field4"},
+        {id:5, data: "Field5"},
+        {id:6, data: "Field6"},
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
